@@ -8,8 +8,13 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
+#/log/*
+#!/log/.keep
 /tmp
 
+/log
 Gemfile.lock
+/.idea
+/bin
+/public/uploads
+.byebug_history
