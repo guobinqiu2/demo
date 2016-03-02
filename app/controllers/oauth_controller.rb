@@ -18,7 +18,7 @@ class OauthController < ApplicationController
       @user = User.first_or_initialize(name: user_info_hash['nickname'], uid: openid_hash['openid'], provider: 'QQ')
       if @user.save!
         session[:user_id] = @user.auth_token
-        redirect_to articles_path
+        redirect_to session[:return_to] || articles_path
       end
     rescue => e
       #raise e

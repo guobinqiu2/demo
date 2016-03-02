@@ -32,9 +32,6 @@ class UsersController < ApplicationController
   end
 
   def login
-    if current_user
-      redirect_to articles_path
-    end
   end
 
   def create_login_session
@@ -43,7 +40,7 @@ class UsersController < ApplicationController
     @user = User.find_by(name: params[:user][:name])
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.auth_token
-      redirect_to articles_path
+      redirect_to session[:return_to] || articles_path
     else
       render 'login'
     end

@@ -77,6 +77,10 @@ class ArticlesController < ApplicationController
   def edit
     #@tags = Tag.all
     #@article = Article.find(params[:id])
+    unless current_user
+      session[:return_to] = request.url
+      redirect_to login_users_path
+    end
   end
 
   def update

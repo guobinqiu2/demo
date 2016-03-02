@@ -66,7 +66,7 @@ module ArticleSearchable
 
 
     #设置索引文件本身的索引规则
-    settings index: { number_of_shards: 1 } do
+    settings index: { number_of_shards: 10, number_of_replicas: 0 } do
       #分别设置每个字段的索引规则
       mappings dynamic: 'false' do
         indexes :title, analyzer: 'snowball', boost: 10
