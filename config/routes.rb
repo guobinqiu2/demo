@@ -79,6 +79,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'oauth/qq_login' => 'oauth#qq_login'
-  get 'oauth/qq_callback' => 'oauth#qq_callback'
+  #get '/auth/qq' => 'oauth_qq#grant'
+  #get '/auth/qq/callback' => 'oauth_qq#create_login_session'
+
+  get '/auth/:provider/callback' => 'oauth#create_login_session'
 end
