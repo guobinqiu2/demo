@@ -28,8 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #https://github.com/ruby-grape/grape
 gem 'grape'
 
-gem 'carrierwave'#上传文件
-gem "mini_magick"#https://github.com/minimagick/minimagick
+gem 'carrierwave' #上传文件
+gem 'mini_magick' #https://github.com/minimagick/minimagick
+gem 'carrierwave-qiniu'
 
 #一个分页插件
 gem 'kaminari'
