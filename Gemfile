@@ -84,6 +84,9 @@ gem 'omniauth-oauth2'
 #性能监控
 gem 'newrelic_rpm'
 
+#ajax fileupload
+#https://github.com/JangoSteve/remotipart
+gem 'remotipart', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

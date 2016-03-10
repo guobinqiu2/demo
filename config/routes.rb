@@ -76,6 +76,7 @@ Rails.application.routes.draw do
       delete 'logout'
     end
     member do
+      patch 'upload'
     end
   end
 

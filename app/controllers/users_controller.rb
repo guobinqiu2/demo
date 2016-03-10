@@ -27,6 +27,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def upload
+    @user = User.find(params[:id])
+    if @user.update_attribute(:avatar, params[:user][:avatar])
+      respond_to do |format|
+        format.html { redirect_to users_path }
+        format.js { render 'upload' }
+      end
+    else
+      render 'edit'
+    end
+  end
+
   def signup
     @user = User.new
   end
